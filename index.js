@@ -1,13 +1,13 @@
+//Load express module with `require` directive
 var express = require('express')
 var app = express()
 
-app.set('port', (process.env.PORT || 5000))
-app.use(express.static(__dirname + '/public'))
-
-app.get('/', function(request, response) {
-  response.send('Hello World!')
+//Define request response in root URL (/)
+app.get('/', function (req, res) {
+  res.send('Hello World!')
 })
 
-app.listen(app.get('port'), function() {
-  console.log("Node app is running at localhost:" + app.get('port'))
+//Launch listening server on port 8081
+app.listen(8081, function () {
+  console.log('app listening on port 8081!')
 })
